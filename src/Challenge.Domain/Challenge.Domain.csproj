@@ -6,6 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.4.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Challenge.Domain.Core\Challenge.Domain.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
