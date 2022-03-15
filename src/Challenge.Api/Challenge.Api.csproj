@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Challenge.Domain\Challenge.Domain.csproj" />
+    <ProjectReference Include="..\Challenge.Infra.IoC\Challenge.Infra.IoC.csproj" />
+    <ProjectReference Include="..\Challenge.Services\Challenge.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,34 +1,48 @@
+using Challenge.Api.Config;
+using Challenge.Api.Filters;
+using Challenge.Infra.IoC;
+using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Challenge.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                    .SetBasePath(env.ContentRootPath)
+                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false)
+                    .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwagger("Challenge.Api v1");
 
-            services.AddControllers();
+            services.AddControllers(c =>
+            {
+                c.Filters.Add(typeof(ActionFilter));
+                c.Filters.Add(typeof(NotificationFilter));
+            })
+             .AddFluentValidation();
+
+            services.RegisterLocalServices();
+            services.AddMediatR(AppDomain.CurrentDomain.Load("Challenge.Services"));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -36,10 +50,9 @@ namespace Challenge.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger("Challenge.Api v1");
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
