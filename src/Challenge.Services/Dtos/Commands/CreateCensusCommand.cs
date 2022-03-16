@@ -6,10 +6,10 @@ using System.Collections.Generic;
 
 namespace Challenge.Services.Dtos.Commands
 {
-    public record CreateCensusCommand(string FirstName, string LastName, string SkinColor, Parents Parents, List<Son> Sons, string Schooling, Regions Region) : IRequest<bool> { }
+    public record CreateCensusCommand(string FirstName, string LastName, string SkinColor, ParentsCommand Parents, List<SonCommand> Sons, string Schooling, Regions Region) : IRequest<bool> { }
 
-    public record Parents(string FatherName, string MotherName) { }
-    public record Son(string Name, int Age) { }
+    public record ParentsCommand(string FatherName, string MotherName) { }
+    public record SonCommand(string Name, int Age) { }
 
     public class CreateCensusCommandValidations : AbstractValidator<CreateCensusCommand>
     {
@@ -40,7 +40,7 @@ namespace Challenge.Services.Dtos.Commands
                 .WithMessage(string.Format(CensusMessages.RequiredField, "Region"));
         }
 
-        private bool ValidateParents(Parents parents)
+        private bool ValidateParents(ParentsCommand parents)
         {
             if (string.IsNullOrWhiteSpace(parents.FatherName) || string.IsNullOrWhiteSpace(parents.MotherName))
                 return false;
