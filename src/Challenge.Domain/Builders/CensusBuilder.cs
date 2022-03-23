@@ -1,6 +1,7 @@
 ﻿using Challenge.Domain.Aggregate;
 using Challenge.Domain.Core.Entities;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Challenge.Domain.Builders
 {
@@ -19,6 +20,9 @@ namespace Challenge.Domain.Builders
 
         public CensusBuilder AddParents(Parents parents)
         {
+            if (_census.Parents == null)
+                _census.Parents = new Parents();
+
             _census.Parents.FatherName = parents.FatherName;
             _census.Parents.MotherName = parents.MotherName;
 
@@ -27,6 +31,9 @@ namespace Challenge.Domain.Builders
 
         public CensusBuilder AddSons(List<Son> sons)
         {
+            if (_census.Sons == null)
+                _census.Sons = new List<Son>();
+
             _census.Sons.AddRange(sons);
 
             return this;

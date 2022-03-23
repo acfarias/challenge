@@ -1,5 +1,6 @@
 using Challenge.Api.Config;
 using Challenge.Api.Filters;
+using Challenge.Domain.Core.Configurations;
 using Challenge.Infra.IoC;
 using FluentValidation.AspNetCore;
 using MediatR;
@@ -40,6 +41,7 @@ namespace Challenge.Api
              .AddFluentValidation();
 
             services.RegisterLocalServices();
+            services.Configure<AppSettingsConfigurations>(Configuration);
             services.AddMediatR(AppDomain.CurrentDomain.Load("Challenge.Services"));
         }
 

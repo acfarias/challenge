@@ -18,17 +18,8 @@ namespace Challenge.Infra.Data.Context
 
         private IMongoDatabase GetMongoDatabase()
         {
-            return new MongoClient(string.Format(_settings.DataBaseConfiguration.Server,
-                                                 _settings.DataBaseConfiguration.User,
-                                                 _settings.DataBaseConfiguration.Password,
-                                                 _settings.DataBaseConfiguration.Cluster,
-                                                 _settings.DataBaseConfiguration.DataBaseName))
+            return new MongoClient(_settings.DataBaseConfiguration.ConnectionString)
                 .GetDatabase(_settings.DataBaseConfiguration.DataBaseName);
-        }
-
-        public void Dispose()
-        {
-            _dataBase.Client.Cluster.Dispose();
         }
     }
 }

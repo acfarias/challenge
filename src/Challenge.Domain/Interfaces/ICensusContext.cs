@@ -3,7 +3,7 @@ using System;
 
 namespace Challenge.Domain.Interfaces
 {
-    public interface ICensusContext : IDisposable
+    public interface ICensusContext
     {
         IMongoDatabase _dataBase { get; }
     }
