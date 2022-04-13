@@ -3,35 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "I -Presentation", "I -Presentation", "{F21818EB-76D3-471F-AD83-1BEE8CF08D13}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{F21818EB-76D3-471F-AD83-1BEE8CF08D13}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "II -Application", "II -Application", "{4361649E-8C72-4318-951A-70728F687327}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{4361649E-8C72-4318-951A-70728F687327}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "III -Domain", "III -Domain", "{D18F049C-95A3-4851-96D5-4B62CCAA1635}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{D18F049C-95A3-4851-96D5-4B62CCAA1635}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IV -Infra", "IV -Infra", "{1BF29C82-561B-4DEC-8278-119EE590802D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{1BF29C82-561B-4DEC-8278-119EE590802D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "V -Tests", "V -Tests", "{96C29D89-155A-4D67-84A1-DCDA4CAE69B8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{96C29D89-155A-4D67-84A1-DCDA4CAE69B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Api", "src\Challenge.Api\Challenge.Api.csproj", "{0F623DD2-3725-413F-86F0-8840EAFAC845}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge.Api", "src\Challenge.Api\Challenge.Api.csproj", "{0F623DD2-3725-413F-86F0-8840EAFAC845}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Services", "src\Challenge.Services\Challenge.Services.csproj", "{3A6BF2BE-DA30-458F-A41F-70A7434AEC5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge.Services", "src\Challenge.Services\Challenge.Services.csproj", "{3A6BF2BE-DA30-458F-A41F-70A7434AEC5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Domain", "src\Challenge.Domain\Challenge.Domain.csproj", "{E8357148-CF24-47E4-9F60-BD8B19863A9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge.Domain", "src\Challenge.Domain\Challenge.Domain.csproj", "{E8357148-CF24-47E4-9F60-BD8B19863A9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Domain.Core", "src\Challenge.Domain.Core\Challenge.Domain.Core.csproj", "{92E484FA-1FFF-48E7-8E71-5BEC8E3FCF9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge.Domain.Core", "src\Challenge.Domain.Core\Challenge.Domain.Core.csproj", "{92E484FA-1FFF-48E7-8E71-5BEC8E3FCF9F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{5C53B379-EBC1-4693-B748-4A88E41D62AD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6D84D3A0-3319-46D6-8AE6-8DBC5B95F0BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Infra.IoC", "src\Challenge.Infra.IoC\Challenge.Infra.IoC.csproj", "{DA037E34-2032-4224-BA97-150CECA027FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge.Infra.IoC", "src\Challenge.Infra.IoC\Challenge.Infra.IoC.csproj", "{DA037E34-2032-4224-BA97-150CECA027FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.Infra.Data", "src\Challenge.Infra.Data\Challenge.Infra.Data.csproj", "{65CBF9DE-E96C-46C0-9D3E-6C2E17B81E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge.Infra.Data", "src\Challenge.Infra.Data\Challenge.Infra.Data.csproj", "{65CBF9DE-E96C-46C0-9D3E-6C2E17B81E78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.UnitTests", "tests\Challenge.UnitTests\Challenge.UnitTests.csproj", "{C4DB939E-EC94-4C0C-BAFE-5F70F0C77B20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge.UnitTests", "tests\Challenge.UnitTests\Challenge.UnitTests.csproj", "{C4DB939E-EC94-4C0C-BAFE-5F70F0C77B20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.IntegrationTests", "tests\Challenge.IntegrationTests\Challenge.IntegrationTests.csproj", "{0C0C090D-B440-4346-952C-AF73F66A0454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge.IntegrationTests", "tests\Challenge.IntegrationTests\Challenge.IntegrationTests.csproj", "{0C0C090D-B440-4346-952C-AF73F66A0454}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
