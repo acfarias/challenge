@@ -19,7 +19,11 @@ RUN dotnet publish "Challenge.Api.csproj" -c Release -o /out
 
 FROM restore AS Unit-tests
 WORKDIR "/app/tests/Challenge.UnitTests"
-RUN dotnet test --logger:trx --no-restore
+RUN dotnet test --no-restore
+
+FROM restore AS Integration-tests
+WORKDIR "/app/tests/Challenge.IntegrationTests"
+RUN dotnet test --no-restore
 
 FROM base AS final
 WORKDIR /app
