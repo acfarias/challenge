@@ -1,0 +1,32 @@
+name: Check on PR to Main
+
+on:
+  pull_request:
+    branches: [main]
+  
+jobs:
+  all_checks:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+      
+    - name: Setup Integrations Tests
+      run: docker-compose up -d mongo mongo-express
+      
+    - name: Install .Net
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+        
+    - name: Restore Dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --no-restore
+      
+    - name: Run Unit Tests
+      run: dotnet test tests/Challenge.UnitTests --no-build --verbosity normal
+      
+    - name: Run Integrations Tests
+      run: dotnet test tests/Challenge.IntegrationTests
