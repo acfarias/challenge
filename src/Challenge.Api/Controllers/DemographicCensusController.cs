@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Challenge.Api.Controllers
 {
     [ApiController]
-    [Route("demo-census")]
+    [Route("census")]
     public class DemographicCensusController : ControllerBase
     {
         private readonly IMediator _mediator;
