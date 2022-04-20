@@ -7,6 +7,6 @@ namespace Challenge.Domain.Interfaces.Repository
 {
     public interface ICensusRepository : IRepository<CensusCollection>
     {
-        Task<(int totalPages, IReadOnlyCollection<CensusCollection> data)> GetPaginated(short page, short itemsPerPage, string searchClause, CancellationToken cancellationToken = default);
+        Task<(int totalPages, IReadOnlyCollection<CensusCollection> data)> GetCensusPaginated(short page, short itemsPerPage, string searchClause, CancellationToken cancellationToken = default);
     }
 }

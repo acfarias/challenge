@@ -20,7 +20,7 @@ namespace Challenge.Infra.Data
             _entityCollection = censusContext._dataBase.GetCollection<CensusCollection>(typeof(CensusCollection).Name);
         }
 
-        public async Task<(int totalPages, IReadOnlyCollection<CensusCollection> data)> GetPaginated(short page, short itemsPerPage, string searchClause, CancellationToken cancellationToken = default)
+        public async Task<(int totalPages, IReadOnlyCollection<CensusCollection> data)> GetCensusPaginated(short page, short itemsPerPage, string searchClause, CancellationToken cancellationToken = default)
         {
             var countFacet = AggregateFacet.Create("count", PipelineDefinition<CensusCollection, AggregateCountResult>.Create(new[]
             {
